@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Agrovet - Your Trusted Farm Partner</title>
+    <title>Embogo Veterinary Services - Your Trusted Farm Partner</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -44,6 +44,34 @@
         .cart-btn:hover { color: var(--primary); transform: scale(1.1); }
         .cart-count { position: absolute; top: -8px; right: -8px; background: var(--danger); color: white; font-size: 0.7rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--dark); cursor: pointer; }
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1500;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .whatsapp-float { bottom: 80px; right: 20px; width: 50px; height: 50px; font-size: 1.6rem; }
+        }
 
         .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%); position: relative; overflow: hidden; padding-top: 80px; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.3; }
@@ -254,7 +282,7 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <div class="logo-icon"><i class="fas fa-seedling"></i></div>
-                <div class="logo-text">Green<span>Pasture</span></div>
+                <div class="logo-text">Embogo<span> Vet</span></div>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -272,6 +300,11 @@
             </div>
         </div>
     </nav>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/254712649625" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <section class="hero" id="home">
         <div class="hero-container">
@@ -415,7 +448,7 @@
             <div class="testimonials-slider">
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">"GreenPasture has been our go-to agrovet for 5 years. Their vaccines saved my entire poultry flock during an outbreak. The veterinary team is incredibly knowledgeable and responsive."</p>
+                    <p class="testimonial-text">"Embogo Veterinary Services has been our go-to agrovet for 5 years. Their vaccines saved my entire poultry flock during an outbreak. The veterinary team is incredibly knowledgeable and responsive."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">JK</div>
                         <div class="author-info"><h4>John Kamau</h4><p>Poultry Farmer, Nakuru</p></div>
@@ -423,7 +456,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">"The dairy feed formulations from GreenPasture increased my milk production by 30%. Their nutritionist worked with me to create a custom feeding program that fits my budget perfectly."</p>
+                    <p class="testimonial-text">"The dairy feed formulations from Embogo Vet increased my milk production by 30%. Their nutritionist worked with me to create a custom feeding program that fits my budget perfectly."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">MO</div>
                         <div class="author-info"><h4>Mary Ochieng</h4><p>Dairy Farmer, Eldoret</p></div>
@@ -453,11 +486,11 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="contact-item-text"><h4>Call Us</h4><p>+254 712 345 678<br>+254 733 456 789</p></div>
+                        <div class="contact-item-text"><h4>Call Us</h4><p>0712649625<br>+254 712 345 678</p></div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-item-text"><h4>Email Us</h4><p>info@greenpasture.co.ke<br>support@greenpasture.co.ke</p></div>
+                        <div class="contact-item-text"><h4>Email Us</h4><p>info@embogovet.co.ke<br>support@embogovet.co.ke</p></div>
                     </div>
                 </div>
                 <div class="business-hours">
@@ -478,7 +511,7 @@
                         <div class="form-group"><label>Last Name</label><input type="text" placeholder="Doe" required></div>
                     </div>
                     <div class="form-group"><label>Email Address</label><input type="email" placeholder="john@gmail.com" required></div>
-                    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+254 793814747"></div>
+                    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="0712649625"></div>
                     <div class="form-group">
                         <label>Inquiry Type</label>
                         <select required>
@@ -501,14 +534,14 @@
             <div class="footer-brand">
                 <a href="#" class="logo">
                     <div class="logo-icon"><i class="fas fa-seedling"></i></div>
-                    <div class="logo-text">Green<span>Pasture</span></div>
+                    <div class="logo-text">Embogo<span> Vet</span></div>
                 </a>
                 <p>Your trusted partner in agricultural excellence. Providing quality agrovet supplies and professional veterinary services since 2010.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/254712649625" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -540,8 +573,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 GreenPasture Agrovet. All rights reserved.</p>
-            <p>Designed  by foxwide solutions for farmers</p>
+            <p>&copy; 2026 Embogo Veterinary Services. All rights reserved.</p>
+            <p>Designed by foxwide solutions for farmers</p>
         </div>
     </footer>
 
@@ -585,7 +618,7 @@
             { id: 12, name: "Seeds - Hybrid Maize", category: "crops", price: 1200, originalPrice: null, description: "Certified hybrid maize seeds with high germination rate and disease resistance.", badge: "new", icon: "fas fa-seedling" }
         ];
 
-        let cart = JSON.parse(localStorage.getItem('agrovetCart')) || [];
+        let cart = JSON.parse(localStorage.getItem('embogoCart')) || [];
         let currentFilter = 'all';
 
         function renderProducts(filter = 'all', searchTerm = '') {
@@ -677,7 +710,7 @@
         }
 
         function saveCart() {
-            localStorage.setItem('agrovetCart', JSON.stringify(cart));
+            localStorage.setItem('embogoCart', JSON.stringify(cart));
         }
 
         function updateCartUI() {
