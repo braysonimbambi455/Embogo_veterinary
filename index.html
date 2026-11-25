@@ -73,6 +73,34 @@
             .whatsapp-float { bottom: 80px; right: 20px; width: 50px; height: 50px; font-size: 1.6rem; }
         }
 
+        /* Call Now floating button */
+        .call-float {
+            position: fixed;
+            bottom: 175px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--danger);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(231, 111, 81, 0.4);
+            z-index: 1500;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .call-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(231, 111, 81, 0.6);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .call-float { bottom: 145px; right: 20px; width: 50px; height: 50px; font-size: 1.4rem; }
+        }
+
         .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%); position: relative; overflow: hidden; padding-top: 80px; }
         .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.3; }
         .hero-container { max-width: 1400px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
@@ -87,6 +115,8 @@
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(233, 196, 106, 0.4); }
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+        .btn-danger { background: var(--danger); color: white; box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3); }
+        .btn-danger:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(231, 111, 81, 0.4); }
         .hero-stats { display: flex; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.2); }
         .stat-item h3 { font-size: 2rem; font-weight: 800; color: var(--warning); }
         .stat-item p { font-size: 0.9rem; opacity: 0.8; }
@@ -114,6 +144,33 @@
         .feature-card:hover .feature-icon { transform: scale(1.1) rotate(5deg); background: var(--primary-dark); }
         .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
         .feature-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Livestock Treatment Section */
+        .livestock-treatment { padding: 6rem 2rem; background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 100%); }
+        .livestock-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .livestock-content .section-tag { background: rgba(231, 111, 81, 0.15); color: var(--danger); }
+        .livestock-content .section-title { text-align: left; }
+        .livestock-content .section-subtitle { text-align: left; margin-bottom: 2rem; }
+        .livestock-description { color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+        .livestock-list { list-style: none; margin-bottom: 2.5rem; }
+        .livestock-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+        .livestock-list li i { color: var(--danger); font-size: 1.2rem; margin-top: 0.3rem; flex-shrink: 0; }
+        .livestock-list li div strong { display: block; color: var(--dark); font-weight: 600; margin-bottom: 0.25rem; }
+        .livestock-list li div span { color: var(--gray); font-size: 0.95rem; }
+        .emergency-box { background: var(--danger); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(231, 111, 81, 0.3); text-align: center; }
+        .emergency-box h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .emergency-box p { font-size: 0.95rem; opacity: 0.95; margin-bottom: 1.5rem; }
+        .emergency-phone { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--danger); padding: 1rem 2rem; border-radius: 12px; font-size: 1.5rem; font-weight: 800; text-decoration: none; transition: var(--transition); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .emergency-phone:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .emergency-phone i { font-size: 1.3rem; }
+        .livestock-image { position: relative; }
+        .livestock-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow-lg); }
+        .livestock-badge { position: absolute; bottom: 20px; left: 20px; background: var(--danger); color: white; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 0.5rem; }
+        @media (max-width: 1024px) {
+            .livestock-container { grid-template-columns: 1fr; }
+            .livestock-image { order: -1; }
+            .livestock-image img { height: 350px; }
+        }
 
         .products { padding: 6rem 2rem; background: var(--light); }
         .products-container { max-width: 1400px; margin: 0 auto; }
@@ -187,6 +244,8 @@
         .contact-item-icon { width: 50px; height: 50px; background: var(--accent); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0; }
         .contact-item-text h4 { font-weight: 600; margin-bottom: 0.25rem; color: var(--dark); }
         .contact-item-text p { color: var(--gray); font-size: 0.95rem; }
+        .contact-item-text a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .contact-item-text a:hover { text-decoration: underline; }
         .business-hours { background: var(--light); padding: 1.5rem; border-radius: 16px; }
         .business-hours h4 { font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         .hours-list { list-style: none; }
@@ -271,6 +330,7 @@
             .footer-container { grid-template-columns: 1fr; gap: 2rem; }
             .form-row { grid-template-columns: 1fr; }
             .cart-sidebar { width: 100%; }
+            .emergency-phone { font-size: 1.2rem; padding: 0.85rem 1.5rem; }
         }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -286,6 +346,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#livestock">Livestock Treatment</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -306,6 +367,11 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Call Now floating button -->
+    <a href="tel:0712649625" class="call-float" aria-label="Call us now">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
@@ -314,6 +380,7 @@
                 <p class="hero-description">Premium agrovet supplies, expert veterinary services, and reliable farm solutions to keep your livestock healthy and your crops thriving.</p>
                 <div class="hero-buttons">
                     <a href="#products" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Shop Now</a>
+                    <a href="#livestock" class="btn btn-danger"><i class="fas fa-briefcase-medical"></i> Treat Sick Livestock</a>
                     <a href="#services" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book Service</a>
                 </div>
                 <div class="hero-stats">
@@ -364,6 +431,58 @@
                 <div class="feature-icon"><i class="fas fa-tools"></i></div>
                 <h3>Farm Equipment</h3>
                 <p>Reliable tools, machinery, and accessories to make your farm operations efficient.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVESTOCK TREATMENT SECTION (NEW) -->
+    <section class="livestock-treatment" id="livestock">
+        <div class="livestock-container">
+            <div class="livestock-content">
+                <span class="section-tag"><i class="fas fa-briefcase-medical"></i> Livestock Care</span>
+                <h2 class="section-title">We Treat Any Sick Livestock</h2>
+                <p class="livestock-description">Is your animal unwell? Don't wait — our certified veterinary team provides expert diagnosis and treatment for all types of livestock, from cattle and goats to poultry and sheep. We handle everything from common illnesses to complex medical cases.</p>
+                <ul class="livestock-list">
+                    <li>
+                        <i class="fas fa-cow"></i>
+                        <div>
+                            <strong>Cattle & Dairy Cows</strong>
+                            <span>Milk fever, mastitis, lameness, digestive disorders, and more.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-horse"></i>
+                        <div>
+                            <strong>Goats & Sheep</strong>
+                            <span>Parasites, respiratory infections, hoof problems, and reproductive issues.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-drumstick-bite"></i>
+                        <div>
+                            <strong>Poultry & Birds</strong>
+                            <span>Newcastle disease, coccidiosis, respiratory infections, and nutritional deficiencies.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-piggy-bank"></i>
+                        <div>
+                            <strong>Pigs & Other Livestock</strong>
+                            <span>Skin conditions, fever, infections, and general health assessments.</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="emergency-box">
+                    <h3><i class="fas fa-phone-volume"></i> Call Us Directly</h3>
+                    <p>For immediate assistance, reach out to our veterinary doctor now:</p>
+                    <a href="tel:0712649625" class="emergency-phone">
+                        <i class="fas fa-phone-alt"></i> 0712 649 625
+                    </a>
+                </div>
+            </div>
+            <div class="livestock-image">
+                <img src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&h=600&fit=crop" alt="Veterinarian treating livestock">
+                <div class="livestock-badge"><i class="fas fa-check-circle"></i> Expert Vet Care</div>
             </div>
         </div>
     </section>
@@ -486,7 +605,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="contact-item-text"><h4>Call Us</h4><p>0712649625<br>+254 712 345 678</p></div>
+                        <div class="contact-item-text"><h4>Call Us</h4><p><a href="tel:0712649625">0712 649 625</a><br>+254 712 345 678</p></div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
@@ -518,6 +637,7 @@
                             <option value="">Select inquiry type</option>
                             <option value="product">Product Inquiry</option>
                             <option value="service">Book Service</option>
+                            <option value="treatment">Sick Livestock Treatment</option>
                             <option value="support">Technical Support</option>
                             <option value="other">Other</option>
                         </select>
@@ -548,6 +668,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#livestock"><i class="fas fa-chevron-right"></i> Livestock Treatment</a></li>
                     <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
                     <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                     <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
