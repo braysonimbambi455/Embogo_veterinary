@@ -40,9 +40,6 @@
         .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--primary); }
         .nav-actions { display: flex; gap: 1.5rem; align-items: center; }
-        .cart-btn { position: relative; background: none; border: none; font-size: 1.3rem; color: var(--dark); cursor: pointer; transition: var(--transition); }
-        .cart-btn:hover { color: var(--primary); transform: scale(1.1); }
-        .cart-count { position: absolute; top: -8px; right: -8px; background: var(--danger); color: white; font-size: 0.7rem; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--dark); cursor: pointer; }
 
         /* WhatsApp floating button */
@@ -145,9 +142,59 @@
         .feature-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--dark); }
         .feature-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
 
-        /* Livestock Treatment Section */
-        .livestock-treatment { padding: 6rem 2rem; background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 100%); }
-        .livestock-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        /* ABOUT US SECTION */
+        .about { padding: 6rem 2rem; background: var(--white); }
+        .about-container { max-width: 1400px; margin: 0 auto; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
+        .about-image { position: relative; }
+        .about-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow-lg); }
+        .about-image-badge { position: absolute; bottom: 20px; right: -20px; background: var(--primary); color: white; padding: 1.25rem 1.75rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(45, 106, 79, 0.4); text-align: center; }
+        .about-image-badge h3 { font-size: 2rem; font-weight: 800; margin-bottom: 0.25rem; }
+        .about-image-badge p { font-size: 0.85rem; opacity: 0.9; }
+        .about-content .section-tag { background: var(--accent); color: var(--primary); }
+        .about-content .section-title { text-align: left; }
+        .about-content .section-subtitle { text-align: left; margin-bottom: 1.5rem; }
+        .about-text { color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .value-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .value-icon { width: 50px; height: 50px; background: var(--accent); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.3rem; flex-shrink: 0; }
+        .value-text h4 { font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; font-size: 1rem; }
+        .value-text p { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+        .about-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem; padding-top: 4rem; border-top: 1px solid #e0e0e0; }
+        .about-stat { text-align: center; padding: 2rem; background: var(--light); border-radius: 20px; transition: var(--transition); }
+        .about-stat:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .about-stat i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .about-stat h3 { font-size: 2rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.25rem; }
+        .about-stat p { color: var(--gray); font-size: 0.95rem; }
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-image { order: -1; }
+            .about-image img { height: 400px; }
+            .about-image-badge { right: 20px; }
+        }
+        @media (max-width: 768px) {
+            .about-values { grid-template-columns: 1fr; }
+        }
+
+        /* SERVICES SECTION (now includes livestock treatment) */
+        .services { padding: 6rem 2rem; background: var(--light); }
+        .services-container { max-width: 1400px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .service-card { background: var(--white); border-radius: 24px; padding: 2.5rem; transition: var(--transition); position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); transition: var(--transition); }
+        .service-card:hover::before { width: 100%; opacity: 0.05; }
+        .service-card:hover { transform: translateX(5px); box-shadow: var(--shadow); }
+        .service-number { font-size: 3rem; font-weight: 800; color: var(--primary); opacity: 0.1; position: absolute; top: 1rem; right: 1.5rem; }
+        .service-icon { width: 60px; height: 60px; background: var(--primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .service-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark); }
+        .service-card p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-features { list-style: none; }
+        .service-features li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--dark); font-size: 0.95rem; }
+        .service-features li i { color: var(--primary); font-size: 0.9rem; }
+
+        /* LIVESTOCK TREATMENT SECTION (now part of services) */
+        .livestock-treatment { padding: 4rem 2rem; background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 100%); border-radius: 30px; max-width: 1400px; margin: 0 auto 2rem; }
+        .livestock-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .livestock-content .section-tag { background: rgba(231, 111, 81, 0.15); color: var(--danger); }
         .livestock-content .section-title { text-align: left; }
         .livestock-content .section-subtitle { text-align: left; margin-bottom: 2rem; }
@@ -164,60 +211,13 @@
         .emergency-phone:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
         .emergency-phone i { font-size: 1.3rem; }
         .livestock-image { position: relative; }
-        .livestock-image img { width: 100%; height: 500px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow-lg); }
+        .livestock-image img { width: 100%; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow-lg); }
         .livestock-badge { position: absolute; bottom: 20px; left: 20px; background: var(--danger); color: white; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 0.5rem; }
         @media (max-width: 1024px) {
             .livestock-container { grid-template-columns: 1fr; }
             .livestock-image { order: -1; }
             .livestock-image img { height: 350px; }
         }
-
-        .products { padding: 6rem 2rem; background: var(--light); }
-        .products-container { max-width: 1400px; margin: 0 auto; }
-        .products-filter { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
-        .filter-btn { padding: 0.75rem 1.5rem; border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: 50px; font-weight: 600; cursor: pointer; transition: var(--transition); font-family: 'Poppins', sans-serif; }
-        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); }
-        .search-box { max-width: 500px; margin: 0 auto 3rem; position: relative; }
-        .search-box input { width: 100%; padding: 1rem 1.5rem 1rem 3rem; border: 2px solid #e0e0e0; border-radius: 50px; font-family: 'Poppins', sans-serif; font-size: 1rem; transition: var(--transition); outline: none; }
-        .search-box input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.1); }
-        .search-box i { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--gray); }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .product-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); position: relative; }
-        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .product-badge { position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; z-index: 2; }
-        .badge-sale { background: var(--danger); color: white; }
-        .badge-new { background: var(--primary); color: white; }
-        .product-image { height: 220px; background: var(--accent); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .product-image i { font-size: 4rem; color: var(--primary); opacity: 0.3; }
-        .product-actions { position: absolute; bottom: -50px; left: 0; right: 0; display: flex; justify-content: center; gap: 0.75rem; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent); transition: var(--transition); }
-        .product-card:hover .product-actions { bottom: 0; }
-        .action-btn { width: 40px; height: 40px; border-radius: 50%; background: white; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); color: var(--dark); }
-        .action-btn:hover { background: var(--primary); color: white; transform: scale(1.1); }
-        .product-info { padding: 1.5rem; }
-        .product-category { font-size: 0.85rem; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
-        .product-name { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
-        .product-description { font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem; line-height: 1.6; }
-        .product-footer { display: flex; justify-content: space-between; align-items: center; }
-        .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary-dark); }
-        .product-price .original { font-size: 0.9rem; color: var(--gray); text-decoration: line-through; margin-left: 0.5rem; font-weight: 500; }
-        .add-to-cart { padding: 0.6rem 1.25rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: var(--transition); font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: 0.5rem; }
-        .add-to-cart:hover { background: var(--primary-dark); transform: scale(1.05); }
-        .add-to-cart.added { background: var(--primary-light); }
-
-        .services { padding: 6rem 2rem; background: var(--white); }
-        .services-container { max-width: 1400px; margin: 0 auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .service-card { background: var(--light); border-radius: 24px; padding: 2.5rem; transition: var(--transition); position: relative; overflow: hidden; }
-        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); transition: var(--transition); }
-        .service-card:hover::before { width: 100%; opacity: 0.05; }
-        .service-card:hover { transform: translateX(5px); box-shadow: var(--shadow); }
-        .service-number { font-size: 3rem; font-weight: 800; color: var(--primary); opacity: 0.1; position: absolute; top: 1rem; right: 1.5rem; }
-        .service-icon { width: 60px; height: 60px; background: var(--primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin-bottom: 1.5rem; }
-        .service-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark); }
-        .service-card p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
-        .service-features { list-style: none; }
-        .service-features li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--dark); font-size: 0.95rem; }
-        .service-features li i { color: var(--primary); font-size: 0.9rem; }
 
         .testimonials { padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: white; position: relative; overflow: hidden; }
         .testimonials::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: rgba(255,255,255,0.03); border-radius: 50%; }
@@ -264,34 +264,6 @@
         .submit-btn { width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
         .submit-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3); }
 
-        .cart-sidebar { position: fixed; top: 0; right: -450px; width: 450px; max-width: 100%; height: 100vh; background: white; box-shadow: -5px 0 30px rgba(0,0,0,0.1); z-index: 2000; transition: var(--transition); display: flex; flex-direction: column; }
-        .cart-sidebar.open { right: 0; }
-        .cart-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1999; opacity: 0; visibility: hidden; transition: var(--transition); }
-        .cart-overlay.open { opacity: 1; visibility: visible; }
-        .cart-header { padding: 1.5rem 2rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .cart-header h3 { font-size: 1.3rem; font-weight: 700; }
-        .close-cart { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--gray); transition: var(--transition); }
-        .close-cart:hover { color: var(--danger); transform: rotate(90deg); }
-        .cart-items { flex: 1; overflow-y: auto; padding: 1rem 2rem; }
-        .cart-empty { text-align: center; padding: 3rem 1rem; color: var(--gray); }
-        .cart-empty i { font-size: 4rem; margin-bottom: 1rem; opacity: 0.3; }
-        .cart-item { display: flex; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid #eee; align-items: center; }
-        .cart-item-image { width: 80px; height: 80px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .cart-item-image i { font-size: 2rem; color: var(--primary); opacity: 0.5; }
-        .cart-item-details { flex: 1; }
-        .cart-item-name { font-weight: 600; margin-bottom: 0.25rem; color: var(--dark); }
-        .cart-item-price { color: var(--primary); font-weight: 700; }
-        .cart-item-qty { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
-        .qty-btn { width: 28px; height: 28px; border: 1px solid #ddd; background: white; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
-        .qty-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
-        .remove-item { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 1.1rem; transition: var(--transition); padding: 0.5rem; }
-        .remove-item:hover { transform: scale(1.2); }
-        .cart-footer { padding: 1.5rem 2rem; border-top: 1px solid #eee; background: var(--light); }
-        .cart-total { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1.1rem; }
-        .cart-total span:last-child { font-weight: 800; font-size: 1.3rem; color: var(--primary-dark); }
-        .checkout-btn { width: 100%; padding: 1rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
-        .checkout-btn:hover { background: var(--primary-dark); }
-
         .footer { background: var(--dark); color: white; padding: 4rem 2rem 2rem; }
         .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
         .footer-brand .logo { color: white; margin-bottom: 1.5rem; }
@@ -326,10 +298,9 @@
             .mobile-menu-btn { display: block; }
             .hero-title { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
-            .features-grid, .products-grid, .services-grid { grid-template-columns: 1fr; }
+            .features-grid, .services-grid { grid-template-columns: 1fr; }
             .footer-container { grid-template-columns: 1fr; gap: 2rem; }
             .form-row { grid-template-columns: 1fr; }
-            .cart-sidebar { width: 100%; }
             .emergency-phone { font-size: 1.2rem; padding: 0.85rem 1.5rem; }
         }
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -346,17 +317,12 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#livestock">Livestock Treatment</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-btn" onclick="toggleCart()">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
                 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -377,14 +343,13 @@
             <div class="hero-content">
                 <div class="hero-badge"><i class="fas fa-check-circle"></i> Trusted by 500+ Farmers Since 2010</div>
                 <h1 class="hero-title">Your Farm's Health,<br>Our <span class="highlight">Priority</span></h1>
-                <p class="hero-description">Premium agrovet supplies, expert veterinary services, and reliable farm solutions to keep your livestock healthy and your crops thriving.</p>
+                <p class="hero-description">Expert veterinary services and reliable farm solutions to keep your livestock healthy and your farm thriving.</p>
                 <div class="hero-buttons">
-                    <a href="#products" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Shop Now</a>
-                    <a href="#livestock" class="btn btn-danger"><i class="fas fa-briefcase-medical"></i> Treat Sick Livestock</a>
+                    <a href="#services" class="btn btn-danger"><i class="fas fa-briefcase-medical"></i> Treat Sick Livestock</a>
                     <a href="#services" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book Service</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat-item"><h3>15K+</h3><p>Products Sold</p></div>
+                    <div class="stat-item"><h3>15K+</h3><p>Animals Treated</p></div>
                     <div class="stat-item"><h3>500+</h3><p>Happy Farmers</p></div>
                     <div class="stat-item"><h3>24/7</h3><p>Support Available</p></div>
                 </div>
@@ -395,11 +360,11 @@
                 </div>
                 <div class="floating-card card-1">
                     <div class="floating-icon"><i class="fas fa-shield-alt"></i></div>
-                    <div class="floating-text"><h4>Certified Products</h4><p>100% Genuine Quality</p></div>
+                    <div class="floating-text"><h4>Certified Vet Care</h4><p>100% Genuine Quality</p></div>
                 </div>
                 <div class="floating-card card-2">
                     <div class="floating-icon"><i class="fas fa-truck"></i></div>
-                    <div class="floating-text"><h4>Fast Delivery</h4><p>Same Day Service</p></div>
+                    <div class="floating-text"><h4>On-Farm Visits</h4><p>Same Day Service</p></div>
                 </div>
             </div>
         </div>
@@ -418,9 +383,9 @@
                 <p>Vaccines, dewormers, antibiotics, and supplements to keep your livestock in peak condition.</p>
             </div>
             <div class="feature-card fade-in">
-                <div class="feature-icon"><i class="fas fa-wheat-awn"></i></div>
-                <h3>Quality Feeds</h3>
-                <p>Nutritionally balanced feeds for poultry, dairy, and beef cattle to maximize productivity.</p>
+                <div class="feature-icon"><i class="fas fa-stethoscope"></i></div>
+                <h3>Expert Diagnosis</h3>
+                <p>Professional veterinary diagnosis and treatment plans for all types of livestock.</p>
             </div>
             <div class="feature-card fade-in">
                 <div class="feature-icon"><i class="fas fa-spray-can"></i></div>
@@ -435,80 +400,80 @@
         </div>
     </section>
 
-    <!-- LIVESTOCK TREATMENT SECTION (NEW) -->
-    <section class="livestock-treatment" id="livestock">
-        <div class="livestock-container">
-            <div class="livestock-content">
-                <span class="section-tag"><i class="fas fa-briefcase-medical"></i> Livestock Care</span>
-                <h2 class="section-title">We Treat Any Sick Livestock</h2>
-                <p class="livestock-description">Is your animal unwell? Don't wait — our certified veterinary team provides expert diagnosis and treatment for all types of livestock, from cattle and goats to poultry and sheep. We handle everything from common illnesses to complex medical cases.</p>
-                <ul class="livestock-list">
-                    <li>
-                        <i class="fas fa-cow"></i>
-                        <div>
-                            <strong>Cattle & Dairy Cows</strong>
-                            <span>Milk fever, mastitis, lameness, digestive disorders, and more.</span>
+    <!-- ABOUT US SECTION -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop" alt="About Embogo Veterinary Services">
+                    <div class="about-image-badge">
+                        <h3>15+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag"><i class="fas fa-info-circle"></i> About Us</span>
+                    <h2 class="section-title">Dedicated to Your Farm's Success</h2>
+                    <p class="about-text">Embogo Veterinary Services has been a trusted partner to farmers since 2010. Founded with a passion for animal health and agricultural excellence, we've grown to become a leading provider of veterinary care and farm solutions in the region.</p>
+                    <p class="about-text">Our team of certified veterinarians and agricultural experts is committed to keeping your livestock healthy and your farm productive. We combine modern veterinary science with practical, field-tested experience to deliver results you can count on.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div class="value-text">
+                                <h4>Compassionate Care</h4>
+                                <p>Every animal receives the highest standard of care and attention.</p>
+                            </div>
                         </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-horse"></i>
-                        <div>
-                            <strong>Goats & Sheep</strong>
-                            <span>Parasites, respiratory infections, hoof problems, and reproductive issues.</span>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-award"></i></div>
+                            <div class="value-text">
+                                <h4>Certified Expertise</h4>
+                                <p>Our vets are fully licensed and continuously trained.</p>
+                            </div>
                         </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-drumstick-bite"></i>
-                        <div>
-                            <strong>Poultry & Birds</strong>
-                            <span>Newcastle disease, coccidiosis, respiratory infections, and nutritional deficiencies.</span>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-clock"></i></div>
+                            <div class="value-text">
+                                <h4>24/7 Availability</h4>
+                                <p>Emergency services available around the clock for your peace of mind.</p>
+                            </div>
                         </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-piggy-bank"></i>
-                        <div>
-                            <strong>Pigs & Other Livestock</strong>
-                            <span>Skin conditions, fever, infections, and general health assessments.</span>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="value-text">
+                                <h4>Farmer First</h4>
+                                <p>We build lasting relationships based on trust and results.</p>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-                <div class="emergency-box">
-                    <h3><i class="fas fa-phone-volume"></i> Call Us Directly</h3>
-                    <p>For immediate assistance, reach out to our veterinary doctor now:</p>
-                    <a href="tel:0712649625" class="emergency-phone">
-                        <i class="fas fa-phone-alt"></i> 0712 649 625
-                    </a>
+                    </div>
                 </div>
             </div>
-            <div class="livestock-image">
-                <img src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&h=600&fit=crop" alt="Veterinarian treating livestock">
-                <div class="livestock-badge"><i class="fas fa-check-circle"></i> Expert Vet Care</div>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <i class="fas fa-cow"></i>
+                    <h3>15,000+</h3>
+                    <p>Animals Treated</p>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-user-md"></i>
+                    <h3>10+</h3>
+                    <p>Expert Veterinarians</p>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-smile"></i>
+                    <h3>500+</h3>
+                    <p>Happy Farmers</p>
+                </div>
+                <div class="about-stat">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>15+</h3>
+                    <p>Years in Service</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="products" id="products">
-        <div class="products-container">
-            <div class="section-header">
-                <span class="section-tag">Our Products</span>
-                <h2 class="section-title">Premium Agrovet Supplies</h2>
-                <p class="section-subtitle">Browse our extensive catalog of farm essentials at competitive prices.</p>
-            </div>
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
-            </div>
-            <div class="products-filter">
-                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
-                <button class="filter-btn" onclick="filterProducts('poultry')">Poultry</button>
-                <button class="filter-btn" onclick="filterProducts('dairy')">Dairy</button>
-                <button class="filter-btn" onclick="filterProducts('crops')">Crops</button>
-                <button class="filter-btn" onclick="filterProducts('equipment')">Equipment</button>
-            </div>
-            <div class="products-grid" id="productsGrid"></div>
-        </div>
-    </section>
-
+    <!-- SERVICES SECTION (now includes livestock treatment) -->
     <section class="services" id="services">
         <div class="services-container">
             <div class="section-header">
@@ -554,6 +519,58 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- LIVESTOCK TREATMENT SUB-SECTION (part of services) -->
+            <div class="livestock-treatment">
+                <div class="livestock-container">
+                    <div class="livestock-content">
+                        <span class="section-tag"><i class="fas fa-briefcase-medical"></i> Livestock Treatment</span>
+                        <h2 class="section-title">We Treat Any Sick Livestock</h2>
+                        <p class="livestock-description">Is your animal unwell? Don't wait — our certified veterinary team provides expert diagnosis and treatment for all types of livestock, from cattle and goats to poultry and sheep. We handle everything from common illnesses to complex medical cases.</p>
+                        <ul class="livestock-list">
+                            <li>
+                                <i class="fas fa-cow"></i>
+                                <div>
+                                    <strong>Cattle & Dairy Cows</strong>
+                                    <span>Milk fever, mastitis, lameness, digestive disorders, and more.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-horse"></i>
+                                <div>
+                                    <strong>Goats & Sheep</strong>
+                                    <span>Parasites, respiratory infections, hoof problems, and reproductive issues.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-drumstick-bite"></i>
+                                <div>
+                                    <strong>Poultry & Birds</strong>
+                                    <span>Newcastle disease, coccidiosis, respiratory infections, and nutritional deficiencies.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-piggy-bank"></i>
+                                <div>
+                                    <strong>Pigs & Other Livestock</strong>
+                                    <span>Skin conditions, fever, infections, and general health assessments.</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="emergency-box">
+                            <h3><i class="fas fa-phone-volume"></i> Call Us Directly</h3>
+                            <p>For immediate assistance, reach out to our veterinary doctor now:</p>
+                            <a href="tel:0712649625" class="emergency-phone">
+                                <i class="fas fa-phone-alt"></i> 0712 649 625
+                            </a>
+                        </div>
+                    </div>
+                    <div class="livestock-image">
+                        <img src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?w=800&h=600&fit=crop" alt="Veterinarian treating livestock">
+                        <div class="livestock-badge"><i class="fas fa-check-circle"></i> Expert Vet Care</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -597,7 +614,7 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Get In Touch</h3>
-                <p>Have questions about our products or need to book a veterinary service? Reach out to us and our team will respond promptly.</p>
+                <p>Have questions about our services or need to book a veterinary visit? Reach out to us and our team will respond promptly.</p>
                 <div class="contact-details">
                     <div class="contact-item">
                         <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -635,7 +652,6 @@
                         <label>Inquiry Type</label>
                         <select required>
                             <option value="">Select inquiry type</option>
-                            <option value="product">Product Inquiry</option>
                             <option value="service">Book Service</option>
                             <option value="treatment">Sick Livestock Treatment</option>
                             <option value="support">Technical Support</option>
@@ -656,7 +672,7 @@
                     <div class="logo-icon"><i class="fas fa-seedling"></i></div>
                     <div class="logo-text">Embogo<span> Vet</span></div>
                 </a>
-                <p>Your trusted partner in agricultural excellence. Providing quality agrovet supplies and professional veterinary services since 2010.</p>
+                <p>Your trusted partner in agricultural excellence. Providing professional veterinary services since 2010.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -668,19 +684,18 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#livestock"><i class="fas fa-chevron-right"></i> Livestock Treatment</a></li>
-                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
                     <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Products</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Animal Health</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Feeds & Nutrition</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Crop Protection</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Farm Equipment</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Veterinary Consultation</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Laboratory Testing</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Farmer Training</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Livestock Treatment</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -699,200 +714,12 @@
         </div>
     </footer>
 
-    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
-            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-basket"></i>
-                <p>Your cart is empty</p>
-                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add products to get started</p>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total"><span>Total:</span><span id="cartTotal">KSh 0</span></div>
-            <button class="checkout-btn" onclick="checkout()"><i class="fas fa-credit-card"></i> Proceed to Checkout</button>
-        </div>
-    </div>
-
     <div class="toast" id="toast">
         <div class="toast-icon"><i class="fas fa-check"></i></div>
-        <div><strong>Success!</strong><p id="toastMessage">Item added to cart</p></div>
+        <div><strong>Success!</strong><p id="toastMessage">Message sent successfully!</p></div>
     </div>
 
     <script>
-        const products = [
-            { id: 1, name: "Poultry Vaccine ND-IB", category: "poultry", price: 850, originalPrice: 1200, description: "Combined Newcastle Disease and Infectious Bronchitis vaccine for layers and broilers.", badge: "sale", icon: "fas fa-syringe" },
-            { id: 2, name: "Layer Mash Premium", category: "poultry", price: 3200, originalPrice: null, description: "High-protein layer mash with essential vitamins and minerals for optimal egg production.", badge: "new", icon: "fas fa-wheat-awn" },
-            { id: 3, name: "Dairy Meal Supreme", category: "dairy", price: 2800, originalPrice: 3100, description: "Nutrient-rich dairy meal formulated to boost milk yield and maintain cow health.", badge: "sale", icon: "fas fa-cheese" },
-            { id: 4, name: "Calcium Bolus", category: "dairy", price: 450, originalPrice: null, description: "Slow-release calcium supplement for preventing milk fever in high-yielding dairy cows.", badge: null, icon: "fas fa-pills" },
-            { id: 5, name: "NPK Fertilizer 23-23-0", category: "crops", price: 1850, originalPrice: null, description: "Balanced NPK fertilizer ideal for maize, beans, and vegetable crops. 50kg bag.", badge: null, icon: "fas fa-flask" },
-            { id: 6, name: "Glyphosate Herbicide", category: "crops", price: 1200, originalPrice: 1500, description: "Broad-spectrum systemic herbicide for effective weed control in all crop types.", badge: "sale", icon: "fas fa-spray-can" },
-            { id: 7, name: "Milking Machine Portable", category: "equipment", price: 45000, originalPrice: null, description: "Electric portable milking machine suitable for small to medium dairy farms.", badge: "new", icon: "fas fa-cogs" },
-            { id: 8, name: "Broiler Starter Feed", category: "poultry", price: 2900, originalPrice: null, description: "High-energy starter feed with coccidiostat for healthy broiler chick growth.", badge: null, icon: "fas fa-drumstick-bite" },
-            { id: 9, name: "Dewormer Albendazole", category: "dairy", price: 350, originalPrice: 450, description: "Broad-spectrum anthelmintic for cattle, sheep, and goats. 500ml suspension.", badge: "sale", icon: "fas fa-prescription-bottle" },
-            { id: 10, name: "Knapsack Sprayer 20L", category: "equipment", price: 2800, originalPrice: null, description: "Heavy-duty 20-liter knapsack sprayer with adjustable nozzle and comfortable straps.", badge: null, icon: "fas fa-fill-drip" },
-            { id: 11, name: "Vitamin AD3E Injection", category: "dairy", price: 650, originalPrice: null, description: "Essential vitamin injection for preventing deficiencies and boosting immunity.", badge: null, icon: "fas fa-heartbeat" },
-            { id: 12, name: "Seeds - Hybrid Maize", category: "crops", price: 1200, originalPrice: null, description: "Certified hybrid maize seeds with high germination rate and disease resistance.", badge: "new", icon: "fas fa-seedling" }
-        ];
-
-        let cart = JSON.parse(localStorage.getItem('embogoCart')) || [];
-        let currentFilter = 'all';
-
-        function renderProducts(filter = 'all', searchTerm = '') {
-            const grid = document.getElementById('productsGrid');
-            let filtered = products;
-
-            if (filter !== 'all') {
-                filtered = filtered.filter(p => p.category === filter);
-            }
-
-            if (searchTerm) {
-                filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()) || p.description.toLowerCase().includes(searchTerm.toLowerCase()));
-            }
-
-            grid.innerHTML = filtered.map(product => `
-                <div class="product-card" data-category="${product.category}">
-                    ${product.badge ? `<span class="product-badge badge-${product.badge}">${product.badge === 'sale' ? 'SALE' : 'NEW'}</span>` : ''}
-                    <div class="product-image">
-                        <i class="${product.icon}"></i>
-                        <div class="product-actions">
-                            <button class="action-btn" onclick="addToCart(${product.id})" title="Add to Cart"><i class="fas fa-cart-plus"></i></button>
-                            <button class="action-btn" title="Quick View"><i class="fas fa-eye"></i></button>
-                            <button class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">${product.category}</div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="product-footer">
-                            <div class="product-price">
-                                KSh ${product.price.toLocaleString()}
-                                ${product.originalPrice ? `<span class="original">KSh ${product.originalPrice.toLocaleString()}</span>` : ''}
-                            </div>
-                            <button class="add-to-cart" onclick="addToCart(${product.id})">
-                                <i class="fas fa-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function filterProducts(category) {
-            currentFilter = category;
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            const searchTerm = document.getElementById('searchInput').value;
-            renderProducts(category, searchTerm);
-        }
-
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value;
-            renderProducts(currentFilter, searchTerm);
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
-
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-
-            saveCart();
-            updateCartUI();
-            showToast(`${product.name} added to cart`);
-        }
-
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            saveCart();
-            updateCartUI();
-        }
-
-        function updateQuantity(productId, change) {
-            const item = cart.find(item => item.id === productId);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity <= 0) {
-                    removeFromCart(productId);
-                } else {
-                    saveCart();
-                    updateCartUI();
-                }
-            }
-        }
-
-        function saveCart() {
-            localStorage.setItem('embogoCart', JSON.stringify(cart));
-        }
-
-        function updateCartUI() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const cartTotal = document.getElementById('cartTotal');
-
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-            cartCount.textContent = totalItems;
-            cartTotal.textContent = `KSh ${totalPrice.toLocaleString()}`;
-
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fas fa-shopping-basket"></i>
-                        <p>Your cart is empty</p>
-                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Add products to get started</p>
-                    </div>
-                `;
-            } else {
-                cartItems.innerHTML = cart.map(item => `
-                    <div class="cart-item">
-                        <div class="cart-item-image"><i class="${item.icon}"></i></div>
-                        <div class="cart-item-details">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">KSh ${item.price.toLocaleString()}</div>
-                            <div class="cart-item-qty">
-                                <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-                                <span>${item.quantity}</span>
-                                <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                            </div>
-                        </div>
-                        <button class="remove-item" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></button>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function toggleCart() {
-            document.getElementById('cartSidebar').classList.toggle('open');
-            document.getElementById('cartOverlay').classList.toggle('open');
-            document.body.style.overflow = document.getElementById('cartSidebar').classList.contains('open') ? 'hidden' : '';
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                showToast('Your cart is empty!');
-                return;
-            }
-            showToast('Proceeding to checkout...');
-            setTimeout(() => {
-                alert('Thank you for your order! In a real application, this would redirect to a payment gateway.');
-                cart = [];
-                saveCart();
-                updateCartUI();
-                toggleCart();
-            }, 1000);
-        }
-
         function showToast(message) {
             const toast = document.getElementById('toast');
             document.getElementById('toastMessage').textContent = message;
@@ -938,10 +765,6 @@
                 navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
             }
         });
-
-        // Initialize
-        renderProducts();
-        updateCartUI();
     </script>
 </body>
 </html>
